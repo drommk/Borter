@@ -39,6 +39,10 @@ public class MicrosoftTranslator implements Translator {
     private String azureTokenServiceURL;
     private String translationServiceUrl;
 
+    public MicrosoftTranslator(String clientId, String clientSecret) {
+        this(new Builder(clientId, clientSecret));
+    }
+
     MicrosoftTranslator(Builder builder) {
         clientId = builder.clientId;
         clientSecret = builder.clientSecret;
@@ -117,7 +121,7 @@ public class MicrosoftTranslator implements Translator {
                 && borterToken.localExpirationTime > clockService.getTimeInMillis();
 
         if (isValid) {
-            logger.debug("instance already holds a valid token : {}", borterToken);
+            logger.debug("instance holds a valid token : {}", borterToken);
         } else {
             logger.debug("could not find any valid token");
         }
