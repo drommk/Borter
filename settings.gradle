@@ -1,1 +1,1 @@
-include ':borter-library', ':borter-provider-microsoft'
+include ':borter-library', ':borter-provider-microsoft', ':borter-provider-microsoft-retrofit1x'

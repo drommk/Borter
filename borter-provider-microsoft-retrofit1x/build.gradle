@@ -1,0 +1,6 @@
+dependencies {
+    compile project(':borter-library')
+    compile deps.retrofit1x
+
+    testCompile deps.test
+}
